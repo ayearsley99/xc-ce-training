@@ -7,7 +7,7 @@ resource "volterra_securemesh_site_v2" "site" {
   logs_streaming_disabled = true
   enable_ha               = false
   labels = {
-    (volterra_known_label_key.key.key) = (volterra_known_label.label.value)
+    (virtual-site-terraform) = (volterra_known_label.label.value)
     "ves.io/provider"                  = "ves-io-AZURE"
   }
 
@@ -181,14 +181,14 @@ resource "azurerm_network_interface_security_group_association" "inside_security
   network_security_group_id = module.inside-network-security-group-public.network_security_group_id
 }
 
-resource "volterra_known_label_key" "key" {
-  key         = "virtual-site-terraform"
-  namespace   = "shared"
-  description = "Used to define lables for Virtual Sites "
-}
+# resource "volterra_known_label_key" "key" {
+#  key         = "virtual-site-terraform"
+#  namespace   = "shared"
+#  description = "Used to define lables for Virtual Sites "
+# }
 
 resource "volterra_known_label" "label" {
-  key       = volterra_known_label_key.key.key
+  key       = "virtual-site-terraform"
   namespace = "shared"
   value     = local.f5xc_sms_name
 }
