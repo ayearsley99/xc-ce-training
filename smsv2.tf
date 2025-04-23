@@ -7,7 +7,7 @@ resource "volterra_securemesh_site_v2" "site" {
   logs_streaming_disabled = true
   enable_ha               = false
   labels = {
-    (virtual-site-terraform) = (volterra_known_label.label.value)
+    ("virtual-site-terraform") = (volterra_known_label.label.value)
     "ves.io/provider"                  = "ves-io-AZURE"
   }
 
