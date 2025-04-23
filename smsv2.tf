@@ -198,7 +198,7 @@ resource "volterra_virtual_site" "ce" {
   namespace = "shared"
 
   site_selector {
-    expressions = [format("%s = %s", volterra_known_label_key.key.key, volterra_known_label.label.value)]
+    expressions = [format("%s = %s", volterra_known_label.label.key, volterra_known_label.label.value)]
   }
 
   site_type = "CUSTOMER_EDGE"
