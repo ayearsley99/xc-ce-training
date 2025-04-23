@@ -11,7 +11,7 @@ owner  = "andy yearsley"
 # F5 Distributed Cloud CE SMSv2 Details
 f5xc_sms_node_count = 1
 f5xc_sms_description = "AY Azure smsv2 site created with Terraform"
-
+#
 # Azure details
 location = "uksouth"
 f5xc_sms_instance_type = "Standard_DS4_v2"
